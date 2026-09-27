@@ -1,0 +1,89 @@
+# ==========================================
+# Angular / Node
+# ==========================================
+
+# Dependencias
+node_modules/
+
+# Angular cache
+.angular/
+.cache/
+
+# Build output
+dist/
+out-tsc/
+
+# ==========================================
+# Logs
+# ==========================================
+
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ==========================================
+# IDEs / Editors
+# ==========================================
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+.idea/
+*.iml
+
+# Visual Studio Code
+.history/
+
+# ==========================================
+# Sistema operativo
+# ==========================================
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+# Linux
+*~
+
+# ==========================================
+# Testing / Coverage
+# ==========================================
+
+coverage/
+.nyc_output/
+
+# ==========================================
+# Environment files
+# ==========================================
+
+# Si contienen secretos o configuraciones locales
+.env
+.env.*
+!.env.example
+
+# Angular environments locales
+src/environments/environment.local.ts
+
+# ==========================================
+# Temporary files
+# ==========================================
+
+tmp/
+temp/
+*.tmp
+*.temp
+
+# ==========================================
+# TypeScript
+# ==========================================
+
+*.tsbuildinfo

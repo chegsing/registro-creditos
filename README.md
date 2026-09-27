@@ -88,3 +88,9 @@ La app corre en `http://localhost:4200` y llama directamente a tu backend en
 | 7 | No repetir profesor | `validarSeleccionMaterias()` detecta profesor duplicado antes de habilitar el submit |
 | 8 | Ver registros de otros estudiantes | `EstudiantesListComponent` lista a todos |
 | 9 | Solo nombre de compañeros por materia | `GET /Estudiantes/:id/companeros`, renderizado tal cual en `EstudianteCompanerosComponent` |
+
+## Próximos Pasos
+> Pruebas unitarias con Jasmine y Karma
+> Implementación de SonarQube
+> Adición de nuevos features para temas de seguridad (Autenticación y Autorización con JWT)
+> Nuevas funcionalidades.

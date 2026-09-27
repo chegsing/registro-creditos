@@ -38,22 +38,6 @@ src/app/
   app.config.ts                 # Bootstrap standalone: HttpClient + Router
 ```
 
-**Por qué esta arquitectura:**
-- `core/` no depende de Angular UI: los modelos son un espejo exacto de los
-  JSON reales que compartiste, y las reglas de negocio son funciones puras
-  (`validarSeleccionMaterias`, `calcularCreditos`) que no dependen de
-  componentes ni de HTTP, así se pueden probar de forma aislada.
-- `features/` agrupa cada pantalla junto a su lógica, sin un "god service" que
-  mezcle estado de tres pantallas distintas.
-- Standalone + `loadComponent` da code-splitting por ruta sin necesidad de
-  `NgModule`s.
-- Signals (`signal`, `computed`, `effect`) para el estado local en vez de
-  variables sueltas: la UI se recalcula sola (créditos, validaciones,
-  checkboxes deshabilitados) y todos los componentes usan
-  `ChangeDetectionStrategy.OnPush`.
-- `withComponentInputBinding()` conecta el parámetro `:id` de la ruta
-  directamente al `input.required<string>()` del componente de compañeros,
-  sin tocar `ActivatedRoute` a mano.
 
 ## Cómo ejecutar
 
@@ -85,9 +69,9 @@ La app corre en `http://localhost:4200` y llama directamente a tu backend en
 | Catálogo de materias | GET | `/api/Catalogos/materias` | `EstudianteFormComponent` |
 | Catálogo de programas | GET | `/api/Catalogos/programas-academicos` | `EstudianteFormComponent` |
 
-> El backend compartido no expone `PUT`/`DELETE` de estudiantes, por eso la
-> app solo implementa registro (crear) + consulta, que es exactamente la
-> superficie de la API. Si el backend agrega edición/baja más adelante, basta
+> El backend tambien expone `PUT`/`DELETE` de estudiantes, pero está para un future posterior
+> la app solo implementa registro (crear) + consulta, que es exactamente la
+> superficie de la API. Cuando se agregue edición/baja más adelante, basta
 > con sumar los métodos correspondientes a `EstudiantesApiService` y un botón
 > en `EstudiantesListComponent` — la arquitectura ya está preparada para eso.
 
